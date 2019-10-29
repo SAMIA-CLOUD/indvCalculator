@@ -32,6 +32,10 @@ def squar_rot(a):
         raise
 
 
+def squaree(a):
+    return a ** 2
+
+
 class Calculator:
     result = 0
 
@@ -52,6 +56,10 @@ class Calculator:
 
     def divide(self, a, b):
         self.result = division(a, b)
+        return self.result
+
+    def square(self, a):
+        self.result = squaree(a)
         return self.result
 
     def square_root(self, a):
