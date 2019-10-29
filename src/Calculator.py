@@ -1,3 +1,7 @@
+from math import sqrt
+from sqlite3 import DataError
+
+
 def addition(a, b):
     return a + b
 
@@ -13,6 +17,19 @@ def multiplication(a, b):
 def division(a, b):
     if b != 0:
         return a / b
+
+
+def squar_rot(a):
+    number_types = (int, float, complex)
+    try:
+        if isinstance(a, number_types):
+            return sqrt(a)
+        else:
+            raise DataError("Not a numeric type")
+    except ValueError:
+        return "nan"
+    except DataError:
+        raise
 
 
 class Calculator:
@@ -35,4 +52,8 @@ class Calculator:
 
     def divide(self, a, b):
         self.result = division(a, b)
+        return self.result
+
+    def square_root(self, a):
+        self.result = squar_rot(a)
         return self.result
