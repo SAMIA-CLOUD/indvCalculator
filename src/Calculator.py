@@ -3,20 +3,22 @@ from sqlite3 import DataError
 
 
 def addition(a, b):
-    return a + b
+    return float(a) + float(b)
 
 
 def subtraction(a, b):
-    return a - b
+    return float(a) - float(b)
 
 
 def multiplication(a, b):
-    return a * b
+    return float(a)*float(b)
 
 
 def division(a, b):
     if b != 0:
-        return a / b
+        return float(a)/float(b)
+    else:
+        return 0
 
 
 def squar_rot(a):
@@ -33,7 +35,7 @@ def squar_rot(a):
 
 
 def squaree(a):
-    return a ** 2
+    return float(a) ** 2
 
 
 class Calculator:
