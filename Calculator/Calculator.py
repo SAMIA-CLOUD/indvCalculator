@@ -1,41 +1,10 @@
 from math import sqrt
-from sqlite3 import DataError
-
-
-def addition(a, b):
-    return float(a) + float(b)
-
-
-def subtraction(a, b):
-    return float(a) - float(b)
-
-
-def multiplication(a, b):
-    return float(a)*float(b)
-
-
-def division(a, b):
-    if b != 0:
-        return float(a)/float(b)
-    else:
-        return 0
-
-
-def squar_rot(a):
-    number_types = (int, float, complex)
-    try:
-        if isinstance(a, number_types):
-            return sqrt(a)
-        else:
-            raise DataError("Not a numeric type")
-    except ValueError:
-        return "nan"
-    except DataError:
-        raise
-
-
-def squaree(a):
-    return float(a) ** 2
+from Calculator.Addition import addition
+from Calculator.Subtraction import subtraction
+from Calculator.Multiplication import multiplication
+from Calculator.Division import division
+from Calculator.Square_rot import squar_rot
+from Calculator.Square import squaree
 
 
 class Calculator:

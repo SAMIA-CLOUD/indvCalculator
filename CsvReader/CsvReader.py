@@ -12,7 +12,10 @@ class CsvReader:
     def __init__(self, filepath):
         self.data = []
         relative = Path(filepath)
+        print("Relative: ", relative)
         absolute = relative.absolute()
+        print("Abs: ", absolute)
+        print("Directory Path:", Path().absolute())
         with open(absolute) as text_data:
             csv_data = csv.DictReader(text_data, delimiter=',')
             for row in csv_data:
